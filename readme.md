@@ -1,1 +1,1 @@
-There is no helpful information contained in this file
+A simple Unix program that computes statistics for a stream of numeric values.
