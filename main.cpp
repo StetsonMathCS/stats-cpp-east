@@ -10,6 +10,11 @@ using namespace std;
 int main() {
 
     stats_min min_finder;
+    stats_mean mean_finder;
+    stats_median median_finder;
+    stats_max max_finder;
+    stats_mode mode_finder;
+    stats_count count_finder;
     double val;
     while(cin >> val) {
         min_finder.add(val);
