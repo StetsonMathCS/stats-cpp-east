@@ -10,3 +10,4 @@ int main(){
 	}
 	cout << "max:" <<max_finder.get_max() << endl;
 	return 0;
+}
