@@ -1,14 +1,15 @@
 #include "stats_count.h"
 #include <iostream>
-#include <vector>
 
-double stats_count::compute_count(std::vector<double> data) {
-    double count = 0;
+StatsCount::StatsCount() {
+    count = 0;
+}
 
-    for (size_t i = 0; i < data.size(); i++) {
-        count++;
-    }
+void StatsCount::handleValue(float &val) {
+    count++;
+}
 
+float StatsCount::computeCount() {
     return count;
 }
 
