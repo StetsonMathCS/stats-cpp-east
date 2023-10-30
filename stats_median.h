@@ -2,6 +2,8 @@
 #define STATS_MEDIAN_H
 
 #include "stats_base.h"
+#include <vector>
+using namespace std;
 
 class stats_median : public stats_base
 {
@@ -10,11 +12,12 @@ class stats_median : public stats_base
         void add(double val);
         double result();
         void reset();
-        static int const max_inputs = 100;
+ //       static int const max_inputs = 100;
 
     private:
-        double numbers[max_inputs];
-        int input_count;   
+ //       double numbers[max_inputs]
+        vector<double> numbers;
+ //       int input_count;   
 
 };
 

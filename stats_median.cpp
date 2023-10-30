@@ -10,36 +10,25 @@ stats_median::stats_median()
 
 void stats_median::add(double val)
 {
-    if (input_count == max_inputs)
-    {
-        cout << "You have exceeded the max input limit of " << max_inputs << " numbers";
-        return;
-    }
-
-    numbers[input_count++] = val;
+    numbers.push_back(val);
 }
 
 double stats_median::result()
 {
-    if (input_count == 0)
-    {
-        cout << "Cannot calculate median without any numbers";
-        exit(1);
-    }
 
     // Sort the numbers in ascending order
-    sort(numbers, numbers + input_count);
+    sort(numbers.begin(), numbers.end());
 
     // Calculate the median
     double median;
 
-    if (input_count % 2 == 0)
+    if (numbers.size() % 2 == 0)
     {
-        median = (numbers[input_count / 2 - 1] + numbers[input_count / 2]) / 2.0;
+        median = (numbers[numbers.size() / 2 - 1] + numbers[numbers.size() / 2]) / 2.0;
     }
     else
     {
-        median = numbers[input_count / 2];
+        median = numbers[numbers.size() / 2];
     }
 
     return median;
@@ -47,10 +36,6 @@ double stats_median::result()
 
 void stats_median::reset()
 {
-    input_count = 0;
-    for (int i = 0; i < max_inputs; i++)
-    {
-        numbers[i] = 0.0;
-    }
+    numbers.clear();
 }
 
